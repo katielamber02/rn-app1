@@ -9,17 +9,36 @@
 import {Navigation} from 'react-native-navigation'
 import Auth from './src/screens/Auth/Auth'
 //import App from './App';
+import SignIn from './src/screens/Auth/SignIn'
+import SignUp from './src/screens/Auth/SignUp'
 
-Navigation.registerComponent("places.AuthScreen",()=>Auth)
-
+Navigation.registerComponent("AuthScreen",()=>Auth)
+Navigation.registerComponent("SignIn",()=>SignIn)
+Navigation.registerComponent("SignUp",()=>SignUp)
 
 
 Navigation.events().registerAppLaunchedListener(()=>{
     Navigation.setRoot({
         root:{
-            component:{
-                name:"places.AuthScreen"
+            stack:{
+                id:'AppStack',
+                children:[
+                    {
+                        component:{
+                            name:"AuthScreen",
+                            options:{
+                                topBar:{
+                                    title:{
+                                        text:'Title'
+                                    }
+                                }
+                            }
+                        },
+                    },
+                ]
             }
+           
         }
     })
 })
+
