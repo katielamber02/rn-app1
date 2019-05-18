@@ -11,7 +11,7 @@ export default class SignUp extends Component {
     
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Sign Up</Text>
+        <Text style={styles.welcome}>Some text from Sign Up</Text>
          
         
       </View>
